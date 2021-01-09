@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import './App.css';
 import { getAllObjects } from './helpers/GalleryService';
+import GalleryCollection from './components/GalleryCollection';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
     <h1>IT WORKS! by Bob</h1>
+    <GalleryCollection collection={objects}/>
     </>
   );
 }
