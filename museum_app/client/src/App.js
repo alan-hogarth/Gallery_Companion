@@ -3,6 +3,7 @@ import FavouriteContainer from "./containers/FavouriteContainer";
 import GalleryContainer from './containers/GalleryContainer';
 import NavBar from "./components/NavBar";
 
+
 function App() {
 
   return (
