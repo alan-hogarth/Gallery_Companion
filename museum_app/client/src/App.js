@@ -1,35 +1,18 @@
-import { useState, useEffect} from 'react';
-import './App.css';
-import { getAllObjects } from './helpers/GalleryService';
-import GalleryCollection from './components/GalleryCollection';
-import SearchForm from './components/SearchForm';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import FavouriteContainer from "./containers/FavouriteContainer";
+import GalleryContainer from './containers/GalleryContainer';
+
 
 function App() {
 
-  const [objects, setObjects] = useState([]);
-  const [artworkFilter, setArtworkFilter] = useState([]);
-
-  useEffect(() => {
-    getAllObjects().then((data) =>{
-      setObjects(data.artObjects)
-      setArtworkFilter(data.artObjects)
-    })
-  }, []);
-
-  const handleUserFilterAll = (userInput) => {
-    const artworkDetails = objects.filter((artwork) => {
-      return artwork.longTitle.toUpperCase().includes(userInput.toUpperCase())
-    })
-    setArtworkFilter(artworkDetails)
-  };
-
   return (
-    <>  
-    <SearchForm onUserInput={handleUserFilterAll}/>
-    <GalleryCollection collection={artworkFilter} />
-  
-    </>
-  );
+    <Router>
+      
+      <Route exact path ="/" component={GalleryContainer} />
+      <Route exact path ="/favourites" component={FavouriteContainer} />
+    </Router>
+
+  )
 }
 
 export default App;
