@@ -7,6 +7,12 @@ export const getAllObjects = ()=>{
 
 };
 
+export const getAllFavourites = ()=>{
+    return fetch(localURL)
+    .then(res => res.json())
+};
+
+
 export const addToFavourites = (data)=>{ 
     return fetch(localURL, {
         method: 'POST',
