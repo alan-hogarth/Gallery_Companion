@@ -6,6 +6,7 @@ import GalleryCollection from './components/GalleryCollection';
 function App() {
 
   const [objects, setObjects] = useState([]);
+  const [artworkFilter, setArtworkFilter] = useState([]);
 
   useEffect(() => {
     getAllObjects().then((data) =>{
@@ -13,10 +14,18 @@ function App() {
     })
   }, []);
 
+  const handleUserFilterAll = (userInput) => {
+    const artworkDetails = objects.filter((artwork) => {
+      return artwork.longTitle.toUpperCase().includes(userInput.toUpperCase())
+    })
+    setArtworkFilter(artworkDetails)
+  };
+
   return (
-    <>
-    <h1>IT WORKS! by Bob</h1>
-    <GalleryCollection collection={objects}/>
+    <>  
+    <SearchForm onUserInput={handleUserFilterAll}/>
+    <GalleryCollection collection={objects} />
+  
     </>
   );
 }
