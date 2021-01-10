@@ -24,7 +24,7 @@ export const addToFavourites = (data)=>{
     .then(res => res.json())
 };
 
-export const deleteFavourites = (id) => {
+export const deleteFavourite = (id) => {
     return fetch(localURL + id, {
         method: 'DELETE'
     })

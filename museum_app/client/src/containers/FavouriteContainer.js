@@ -1,31 +1,31 @@
 import { useState, useEffect} from 'react';
-import { getAllFavourites } from '../helpers/GalleryService';
-import GalleryCollection from '../components/GalleryCollection';
-import SearchForm from '../components/SearchForm';
+import { getAllFavourites, deleteFavourite } from '../helpers/GalleryService';
+import FavouriteCollection from '../components/FavouriteCollection';
+
 
 function FavouritesContainer() {
 
   const [objects, setObjects] = useState([]);
-  const [artworkFilter, setArtworkFilter] = useState([]);
+  
 
   useEffect(() => {
     getAllFavourites().then((data) =>{
       setObjects(data)
-      setArtworkFilter(data)
     })
   }, []);
 
-  const handleUserFilterAll = (userInput) => {
-    const artworkDetails = objects.filter((artwork) => {
-      return artwork.longTitle.toUpperCase().includes(userInput.toUpperCase())
-    })
-    setArtworkFilter(artworkDetails)
-  };
+  const removeFavourite = idToDelete => {
+    // req to server to delete booking from DB
+    deleteFavourite(idToDelete);
+
+    // delete locally
+    setObjects(objects.filter(object => object._id !== idToDelete));
+  }
 
   return (
     <>  
-    <SearchForm onUserInput={handleUserFilterAll}/>
-    <GalleryCollection collection={artworkFilter} />
+    
+    <FavouriteCollection artwork={objects} removeFavourite={removeFavourite}/>
   
     </>
   );
