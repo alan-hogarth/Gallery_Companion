@@ -7,7 +7,7 @@ export const getAllObjects = ()=>{
 
 };
 
-export const addToFavourite = (data)=>{ 
+export const addToFavourites = (data)=>{ 
     return fetch(localURL, {
         method: 'POST',
         body: JSON.stringify(data),
@@ -18,7 +18,7 @@ export const addToFavourite = (data)=>{
     .then(res => res.json())
 };
 
-export const deleteFavourite = (id) => {
+export const deleteFavourites = (id) => {
     return fetch(localURL + id, {
         method: 'DELETE'
     })
