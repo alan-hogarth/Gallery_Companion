@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import './App.css';
 import { getAllObjects } from './helpers/GalleryService';
 import GalleryCollection from './components/GalleryCollection';
+import SearchForm from './components/SearchForm';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   useEffect(() => {
     getAllObjects().then((data) =>{
       setObjects(data.artObjects)
+      setArtworkFilter(data.artObjects)
     })
   }, []);
 
@@ -24,7 +26,7 @@ function App() {
   return (
     <>  
     <SearchForm onUserInput={handleUserFilterAll}/>
-    <GalleryCollection collection={objects} />
+    <GalleryCollection collection={artworkFilter} />
   
     </>
   );
