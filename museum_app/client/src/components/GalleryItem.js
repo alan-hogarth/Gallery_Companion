@@ -9,10 +9,12 @@ const GalleryItem = ({object}) => {
      
 
     return(
-        <div>
-            <p>Title: {object.title}</p>
+        <div class="galleryObject">
+            <div class="galleryObjectImage">
+                <img src={object.webImage["url"]} alt={object.title} title={object.title}/>
+            </div>
+            <p>Title: {object.title}, {object.longTitle.match(/\d+/)}</p>
             <p>By: {object.principalOrFirstMaker}</p>
-            <img src={object.webImage["url"]} width="400" height="300" alt={object.title}/>
             <br></br>
             <button onClick={postToFavourites}>Favourite</button>
         </div>

@@ -2,10 +2,15 @@ import GalleryItem from "./GalleryItem";
 import Glide from "@glidejs/glide";
 import { useEffect } from "react";
 import '../css/glide.core.css';
+import '../css/glide.theme.css';
+import '../css/style.css';
 
 const GalleryCollection = ({collection}) => {
+    const sliderConfig = {
+        perView: 3
+    };
 
-    const slider = new Glide('.glide');
+    const slider = new Glide('.glide', sliderConfig);
     
     useEffect(() => {
         return () => slider.mount()
@@ -14,17 +19,17 @@ const GalleryCollection = ({collection}) => {
 
     const objectNodes = collection.map((object) =>{
        return (
+            <li class="glide__slide">
                 <GalleryItem object={object}/>
+            </li>
         );
     })
     return(
-        <div>
+        <div class="gallery">
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                    <li class="glide__slide">0</li>
-                    <li class="glide__slide">1</li>
-                    <li class="glide__slide">2</li>
+                        {objectNodes}
                     </ul>
                 </div>
                 <div class="glide__arrows" data-glide-el="controls">
@@ -32,7 +37,6 @@ const GalleryCollection = ({collection}) => {
                     <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
                 </div>
             </div>
-            {objectNodes}
         </div>
     )
 

@@ -4,7 +4,6 @@ const FavouriteItem = ({artwork, removeFavourite}) => {
         removeFavourite(artwork._id)  
     }
      
-
     return(
         <div>
             <p>Title: {artwork.object.title}</p>

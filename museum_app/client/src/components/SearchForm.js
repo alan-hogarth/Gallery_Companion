@@ -6,12 +6,10 @@ const SearchForm = (({onUserInput}) => {
     }
 
     return (
-        <>
-    <span>
-        Search Artist/Title/Date: 
-    </span>
-    <input type="text" placeholder="search..." onChange={handleFilterInput}/>
-        </>
+       <div class="searchForm">
+            <span>Search Artist/Title/Date: </span>
+            <input type="text" placeholder="search..." onChange={handleFilterInput}/>
+        </div>
     )
 }); 
 
