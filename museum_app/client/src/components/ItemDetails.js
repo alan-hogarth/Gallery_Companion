@@ -1,7 +1,7 @@
 const ItemDetails = ({itemDetails}) => {
     return(
         <>
-        <p>{itemDetails.plaqueDescriptionEnglish}</p>
+        <p>{itemDetails.artObject.plaqueDescriptionEnglish}</p>
         </>
     )
 };
