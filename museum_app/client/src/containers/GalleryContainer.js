@@ -1,17 +1,25 @@
 import { useState, useEffect} from 'react';
-import { getAllObjects } from '../helpers/GalleryService';
+import { getAllObjects, getItemDetails} from '../helpers/GalleryService';
 import GalleryCollection from '../components/GalleryCollection';
 import SearchForm from '../components/SearchForm';
+import ItemDetails from '../components/ItemDetails';
 
 function GalleryContainer() {
 
   const [objects, setObjects] = useState([]);
   const [artworkFilter, setArtworkFilter] = useState([]);
+  const [itemDetails, setItemDetails] = useState({});
 
   useEffect(() => {
     getAllObjects().then((data) =>{
       setObjects(data.artObjects)
       setArtworkFilter(data.artObjects)
+    })
+  }, []);
+
+  useEffect(() => {
+    getItemDetails().then((data) =>{
+      setItemDetails(data.artObject)
     })
   }, []);
 
@@ -26,7 +34,7 @@ function GalleryContainer() {
     <>  
     <SearchForm onUserInput={handleUserFilterAll}/>
     <GalleryCollection collection={artworkFilter} />
-  
+    <ItemDetails itemDetails={itemDetails}/>
     </>
   );
 }

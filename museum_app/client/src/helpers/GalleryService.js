@@ -1,10 +1,16 @@
-const URL = 'https://www.rijksmuseum.nl/api/en/collection/?key=kn4V2P7G&ps=10&toppieces=true&hasImage=true'
+const collectionURL = 'https://www.rijksmuseum.nl/api/en/collection/?key=kn4V2P7G&ps=10&toppieces=true&hasImage=true';
+const itemURL ='https://www.rijksmuseum.nl/api/en/collection/SK-C-5?key=kn4V2P7G';
 const localURL = 'http://localhost:3000/api/objects/'
 
 export const getAllObjects = ()=>{
-    return fetch(URL)
+    return fetch(collectionURL)
     .then(res => res.json())
 
+};
+
+export const getItemDetails= ()=>{
+    return fetch(itemURL)
+    .then(res => res.json())
 };
 
 export const getAllFavourites = ()=>{
