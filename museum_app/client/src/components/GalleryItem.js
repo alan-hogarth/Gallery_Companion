@@ -1,4 +1,5 @@
 import { addToFavourites } from '../helpers/GalleryService';
+import '../css/style.css';
 
 const GalleryItem = ({object, viewItemDetails}) => {
 
@@ -9,7 +10,6 @@ const GalleryItem = ({object, viewItemDetails}) => {
      
     const getItemID = () => {
         viewItemDetails(object.objectNumber)  
-        //console.log(object.objectNumber);
     }
 
     return(
@@ -18,10 +18,9 @@ const GalleryItem = ({object, viewItemDetails}) => {
                 <img src={object.webImage["url"]} alt={object.title} title={object.title}/>
             </div>
             <p>Title: {object.title}, {object.longTitle.match(/\d+/)}</p>
-            <p>By: {object.principalOrFirstMaker} </p>
-            <button onClick={getItemID}>more...</button>
-            <br></br>
-            {/* <button onClick={postToFavourites}>Favourite</button> */}
+            <p>By: {object.principalOrFirstMaker} <button class="more" onClick={getItemID}>more...</button></p>
+            
+            <button class="favourite" onClick={postToFavourites}>Favourite</button>
         </div>
     )
 };

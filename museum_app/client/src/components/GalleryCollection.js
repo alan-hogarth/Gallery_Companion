@@ -17,7 +17,6 @@ const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
         return () => slider.mount()
     }, [slider]);
 
-
     const objectNodes = collection.map((object) =>{
        return (
             <li class="glide__slide">

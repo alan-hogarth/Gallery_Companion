@@ -3,6 +3,7 @@ import { getAllFavourites, deleteFavourite } from '../helpers/GalleryService';
 import FavouriteCollection from '../components/FavouriteCollection';
 
 
+
 function FavouritesContainer() {
 
   const [objects, setObjects] = useState([]);
