@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
 
   return (
-    <ul>
+    <div class="navContainer">
+    <ul class="nav">
       <li>
-        <Link to="/">Gallery</Link>
+        <Link class="navLink" to="/">Gallery</Link>
       </li>
       <li>
-        <Link to="/favourites">Favourites</Link>
+        <Link class="navLink" to="/favourites">Favourites</Link>
       </li>
     </ul>
+    </div>
   );
 }
 
