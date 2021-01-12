@@ -44,7 +44,11 @@ const QuizCollection = () => {
         },
     ];
 
-    const handleAnswerButtonClick = (answerOption) => {
+    const handleAnswerButtonClick = (isCorrect) => {
+        if (isCorrect) {
+            alert("the answer is correct!")
+        }
+                    
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
@@ -67,7 +71,7 @@ const QuizCollection = () => {
                     </div>
                     <div className='answer-section'>
                         {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                            <button onClick={() => handleAnswerButtonClick()}>{answerOption.answerText}</button>
+                            <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
                         ))}
                     </div>
                 </>
