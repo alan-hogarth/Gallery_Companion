@@ -36,7 +36,7 @@ body {
     height: 299px;
 }
 
-.galleryObject button.favourite, .nav li{
+.galleryObject button.favourite, .galleryObject button.delete, .nav li{
     z-index: 2;
     color: white;
     text-transform: uppercase;
@@ -86,7 +86,7 @@ body {
     text-decoration: none;
 }
 
-.galleryObject button.favourite {
+.galleryObject button.favourite, .galleryObject button.delete {
     position: absolute;
     display: block;
     top: 95%;

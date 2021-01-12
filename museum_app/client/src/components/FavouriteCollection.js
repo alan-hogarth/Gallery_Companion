@@ -16,10 +16,10 @@ const FavouriteCollection = ({artwork, removeFavourite}) => {
         return () => slider.mount()
     }, [slider]);
 
-    const objectNodes = artwork.map((object) =>{
+    const objectNodes = artwork.map((object, index) =>{
         return (
-            <li class="glide__slide">
-                <FavouriteItem artwork={object} removeFavourite={removeFavourite}/>
+            <li className="glide__slide">
+                <FavouriteItem artwork={object} removeFavourite={removeFavourite} key={index}/>
             </li>    
         );
     })

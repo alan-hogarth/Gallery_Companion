@@ -2,12 +2,9 @@ import { useState, useEffect} from 'react';
 import { getAllFavourites, deleteFavourite } from '../helpers/GalleryService';
 import FavouriteCollection from '../components/FavouriteCollection';
 
-
-
 function FavouritesContainer() {
 
   const [objects, setObjects] = useState([]);
-  
 
   useEffect(() => {
     getAllFavourites().then((data) =>{
@@ -25,9 +22,7 @@ function FavouritesContainer() {
 
   return (
     <>  
-    
-    <FavouriteCollection artwork={objects} removeFavourite={removeFavourite}/>
-  
+      <FavouriteCollection artwork={objects} removeFavourite={removeFavourite}/>
     </>
   );
 }

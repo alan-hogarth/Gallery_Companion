@@ -5,14 +5,13 @@ const FavouriteItem = ({artwork, removeFavourite}) => {
     }
      
     return(
-        <div class="galleryObject">
-            <div class="galleryObjectImage">
+        <div className="galleryObject">
+            <div className="galleryObjectImage">
                 <img src={artwork.object.webImage["url"]} alt={artwork.object.title} title={artwork.object.title}/>
             </div>
-                <p>Title: {artwork.object.title}</p>
-                <p>By: {artwork.object.principalOrFirstMaker}</p>
-                <br />
-                <button onClick={deleteButton}>Delete</button>
+            <p>Title: {artwork.object.title}</p>
+            <p>By: {artwork.object.principalOrFirstMaker}</p>
+            <button className="delete" onClick={deleteButton}>Delete</button>
         </div>
     )
 };
