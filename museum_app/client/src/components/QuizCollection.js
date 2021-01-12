@@ -61,7 +61,7 @@ const QuizCollection = () => {
     return (
         <div className='app'>
             {showScore ? (
-                <div className='score-section'>You scored {score} out of {questions.length}</div>
+                <div className='score-section'>You scored {score} out of {questions.length}. Click on 'Gallery' to return to home page.</div>
             ) : (
                 <>
                     <div className='question-section'>
@@ -71,7 +71,7 @@ const QuizCollection = () => {
                         <div className='question-text'>{questions[currentQuestion].questionText}</div>
                     </div>
                     <div className='answer-section'>
-                        {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                        {questions[currentQuestion].answerOptions.map((answerOption) => (
                             <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
                         ))}
                     </div>
