@@ -30,7 +30,7 @@ const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
         if ( itemDetails ){
             return (<ItemDetails itemDetails={itemDetails}/>)
         } 
-        return null
+        return null;
     }
 
     return(

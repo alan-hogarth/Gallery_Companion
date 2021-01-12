@@ -1,4 +1,9 @@
-const collectionURL = 'https://www.rijksmuseum.nl/api/en/collection/?key=kn4V2P7G&ps=10&toppieces=true&hasImage=true';
+import api_key from "../api_key";
+
+const userKey = api_key()
+console.log("api_key =", userKey)
+
+const collectionURL = `https://www.rijksmuseum.nl/api/en/collection/?key=${userKey}&ps=10&toppieces=true&hasImage=true`;
 
 const localURL = 'http://localhost:3000/api/objects/'
 

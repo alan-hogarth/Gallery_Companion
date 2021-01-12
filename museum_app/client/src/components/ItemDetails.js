@@ -10,6 +10,8 @@ const ItemDetails = ({itemDetails}) => {
 
     return(
         <>
+        <img src={itemDetails.artObject.webImage['url']} height="100" width="150"/>
+        <p>{itemDetails.artObject.longTitle}</p>
         <p>{itemDetails.artObject.plaqueDescriptionEnglish}</p>
         <textarea 
             value={itemDetails.artObject.plaqueDescriptionEnglish}
