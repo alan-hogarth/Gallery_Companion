@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const ItemDetails = ({itemDetails}) => {
     
     const [value, setValue] = useState(itemDetails.artObject.plaqueDescriptionEnglish);
-    const { speak } = useSpeechSynthesis();
+    const { speak, cancel } = useSpeechSynthesis();
     
    
 
@@ -17,7 +17,10 @@ const ItemDetails = ({itemDetails}) => {
             value={itemDetails.artObject.plaqueDescriptionEnglish}
             onChange={(event) => setValue(event.target.value)}
             />
-            <button onClick={() => speak({ text: value })}>Click for Audio</button>
+            <button onClick={() => speak({ text: itemDetails.artObject.plaqueDescriptionEnglish })}>Click for Audio</button>
+            <button type="button" onClick={cancel}>
+                Stop
+              </button>
         </>
     )
 };
