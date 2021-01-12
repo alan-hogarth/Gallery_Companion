@@ -1,5 +1,7 @@
 const QuizCollection = () => {
 
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
     const questions = [
         {
             questionText: 'The iPhone was created by which company?',
