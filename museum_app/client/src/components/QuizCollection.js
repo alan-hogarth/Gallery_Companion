@@ -23,7 +23,34 @@ const QuizCollection = () => {
                 { answerText: '7', isCorrect: true },
             ],
         },
+        {
+            questionText: 'Who dah man?',
+            answerOptions: [
+                { answerText: 'You dah man', isCorrect: false },
+                { answerText: 'I dah man', isCorrect: false },
+                { answerText: 'Bob', isCorrect: false },
+                { answerText: 'What man?', isCorrect: true },
+            ],
+        },
+        {
+            questionText: 'Love is in the (what)',
+            answerOptions: [
+                { answerText: 'Breakfast', isCorrect: false },
+                { answerText: 'word "clove"', isCorrect: false },
+                { answerText: 'Imagination', isCorrect: false },
+                { answerText: 'Air', isCorrect: true },
+            ],
+        },
     ];
+
+    const handleAnswerButtonClick = (answerOption) => {
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < questions.length) {
+            setCurrentQuestion(nextQuestion);
+        } else {
+            alert('you reached the end of the quiz')
+        }
+    }
 
     return (
         <div className='app'>
@@ -41,7 +68,7 @@ const QuizCollection = () => {
                     </div>
                     <div className='answer-section'>
                         {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                            <button>{answerOption.answerText}</button>
+                            <button onClick={() => handleAnswerButtonClick()}>{answerOption.answerText}</button>
                         ))}
                     </div>
                 </>
