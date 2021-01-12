@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 const QuizCollection = () => {
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
 
     const questions = [
@@ -46,7 +47,7 @@ const QuizCollection = () => {
 
     const handleAnswerButtonClick = (isCorrect) => {
         if (isCorrect) {
-            alert("the answer is correct!")
+            setScore(score + 1);
         }
                     
         const nextQuestion = currentQuestion + 1;
@@ -60,7 +61,7 @@ const QuizCollection = () => {
     return (
         <div className='app'>
             {showScore ? (
-                <div className='score-section'>You scored 1 out of {questions.length}</div>
+                <div className='score-section'>You scored {score} out of {questions.length}</div>
             ) : (
                 <>
                     <div className='question-section'>
