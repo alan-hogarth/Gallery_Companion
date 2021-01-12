@@ -99,6 +99,14 @@ body {
     color: white;
 }
 
+.galleryDescription {
+    border: 1px solid white;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 36px;
+
+}
+
 .galleryDescription button {
     position: relative;
     display: flex-wrap;
@@ -116,13 +124,21 @@ body {
     transition: opacity 150ms ease, border 300ms ease-in-out;
     transform: translateY(-50%);
     line-height: 1;
-    margin: 10px;
+    margin: 30px;
 }
 
 .galleryDescription button:focus {
-        outline: none; 
+    outline: none; 
 }
 
 .galleryDescription button:hover {
     border-color: white; 
+}
+
+h3 {
+    margin-left: 35px;
+}
+
+.galleryDescription, ul, li {
+    font-size: 40;
 }
