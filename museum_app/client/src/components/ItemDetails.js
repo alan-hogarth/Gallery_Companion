@@ -6,11 +6,13 @@ const ItemDetails = ({itemDetails}) => {
     const [value, setValue] = useState(itemDetails.artObject.plaqueDescriptionEnglish);
     const { speak } = useSpeechSynthesis();
     
+   
+
     return(
         <>
         <p>{itemDetails.artObject.plaqueDescriptionEnglish}</p>
-        <textarea
-            value={value}
+        <textarea 
+            value={itemDetails.artObject.plaqueDescriptionEnglish}
             onChange={(event) => setValue(event.target.value)}
             />
             <button onClick={() => speak({ text: value })}>Click for Audio</button>
