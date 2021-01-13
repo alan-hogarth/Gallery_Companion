@@ -7,7 +7,9 @@ const ItemDetails = ({itemDetails}) => {
     const { speak, cancel } = useSpeechSynthesis();
 
     const textItem = () => {
-        return (`This piece is titled ${itemDetails.artObject.title} by ${itemDetails.artObject.principalOrFirstMaker} ',' created in ${itemDetails.artObject.dating.sortingDate} '..' ${itemDetails.artObject.plaqueDescriptionEnglish}`)
+        return (
+            `This piece is titled ${itemDetails.artObject.title} 
+            by ${itemDetails.artObject.principalOrFirstMaker} ',' created in ${itemDetails.artObject.dating.sortingDate} '..' ${itemDetails.artObject.plaqueDescriptionEnglish}`)
     }
     
   
@@ -22,7 +24,6 @@ const ItemDetails = ({itemDetails}) => {
                 <li>{itemDetails.artObject.plaqueDescriptionEnglish}</li>
             </ul>
                 <button onClick={() => speak({ text: textItem() })}>▶️ Play Audio</button>
-                {console.log('the value is:', textItem())}
                 <button type="button" onClick={cancel}>
                    ⏹ Stop Audio
                 </button> 
