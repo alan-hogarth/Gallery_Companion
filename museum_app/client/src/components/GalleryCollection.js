@@ -25,16 +25,23 @@ const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
 
     if (itemDetails) {
         sliderConfig["startAt"] = collection.findIndex(item => itemDetails.artObject.objectNumber === item.objectNumber )
+        //slider.mount();
 
-      // console.log("itemDetails.artObject.objectNumber = ", itemDetails.artObject.objectNumber)
+        console.log("itemDetails.artObject.objectNumber = ", itemDetails.artObject.objectNumber)
 
-       //console.log(sliderConfig["startAt"])
+        console.log(sliderConfig["startAt"])
+        console.log(slider.focusAt)
 
     }
     
     useEffect(() => {
-        return () => slider.mount()
-    }, [slider]);
+        if (itemDetails) {
+            const startIndex =  collection.findIndex(item => itemDetails.artObject.objectNumber === item.objectNumber );
+            slider.update({ startAt: startIndex});
+        }
+        slider.mount()
+        //return () => slider.mount()
+    }, [slider, itemDetails, collection]);
 
     const objectNodes = collection.map((object, index) =>{
        return (

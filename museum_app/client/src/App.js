@@ -4,7 +4,6 @@ import GalleryContainer from './containers/GalleryContainer';
 import NavBar from "./components/NavBar";
 import './css/style.css';
 
-
 function App() {
 
   return (

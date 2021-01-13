@@ -16,7 +16,7 @@ function FavouritesContainer() {
     // req to server to delete booking from DB
     deleteFavourite(idToDelete);
 
-    // delete locally
+    // delete locally from screen
     setObjects(objects.filter(object => object._id !== idToDelete));
   }
 
