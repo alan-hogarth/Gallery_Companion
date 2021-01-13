@@ -7,21 +7,46 @@ import '../css/style.css';
 import ItemDetails from '../components/ItemDetails';
 
 const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
-    const sliderConfig = {
-        perView: 3
+    let sliderConfig = {
+        perView: 3,
+        startAt: 0,
+        rewind: false,
+        breakpoints: {
+            800: {
+                perView: 2
+            },
+            400: {
+                perView: 1
+            }
+        }
     };
 
-    const slider = new Glide('.glide', sliderConfig);
+    let slider =  new Glide('.glide', sliderConfig);
+
+    if (itemDetails) {
+        sliderConfig["startAt"] = collection.findIndex(item => itemDetails.artObject.objectNumber === item.objectNumber )
+        //slider.mount();
+
+        console.log("itemDetails.artObject.objectNumber = ", itemDetails.artObject.objectNumber)
+
+        console.log(sliderConfig["startAt"])
+        console.log(slider.focusAt)
+
+    }
     
     useEffect(() => {
-        return () => slider.mount()
-    }, [slider]);
+        if (itemDetails) {
+            const startIndex =  collection.findIndex(item => itemDetails.artObject.objectNumber === item.objectNumber );
+            slider.update({ startAt: startIndex});
+        }
+        slider.mount()
+        //return () => slider.mount()
+    }, [slider, itemDetails, collection]);
 
-
-    const objectNodes = collection.map((object) =>{
+    const objectNodes = collection.map((object, index) =>{
        return (
-            <li class="glide__slide">
-                <GalleryItem object={object} viewItemDetails={viewItemDetails}/>
+            <li className="glide__slide" key={index}>
+                <GalleryItem object={object} viewItemDetails={viewItemDetails} />
             </li>
         );
     })
