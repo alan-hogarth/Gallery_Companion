@@ -11,6 +11,9 @@ const NavBar = () => {
       <li>
         <Link class="navLink" to="/favourites">Favourites</Link>
       </li>
+      <li>
+        <Link class="navLink" to="/quiz">Quiz</Link>
+      </li>
     </ul>
     </div>
   );

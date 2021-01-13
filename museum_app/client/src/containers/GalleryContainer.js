@@ -3,7 +3,6 @@ import { getAllObjects, getItemDetails} from '../helpers/GalleryService';
 import GalleryCollection from '../components/GalleryCollection';
 import SearchForm from '../components/SearchForm';
 
-
 function GalleryContainer() {
 
   const [objects, setObjects] = useState([]);
@@ -33,9 +32,8 @@ function GalleryContainer() {
 
   return (
     <>  
-    <SearchForm onUserInput={handleUserFilterAll}/>
-    <GalleryCollection collection={artworkFilter} viewItemDetails={viewItemDetails} itemDetails={itemDetails}/>
-
+      <SearchForm onUserInput={handleUserFilterAll}/>
+      <GalleryCollection collection={artworkFilter} viewItemDetails={viewItemDetails} itemDetails={itemDetails}/>
     </>
   );
 }
