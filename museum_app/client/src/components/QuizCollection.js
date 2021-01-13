@@ -8,39 +8,48 @@ const QuizCollection = () => {
 
     const questions = [
         {
-            questionText: 'The iPhone was created by which company?',
+            questionText: '"The Seven Works of Mercy, 1504" is a artwork by which artist?', 
             answerOptions: [
-                { answerText: 'Apple', isCorrect: true },
-                { answerText: 'Intel', isCorrect: false },
-                { answerText: 'Amazon', isCorrect: false },
-                { answerText: 'Microsoft', isCorrect: false },
+                { answerText: 'Master of Almaar', isCorrect: true },
+                { answerText: 'Cornelis Troost', isCorrect: false },
+                { answerText: 'Leonardo Da Vinci', isCorrect: false },
+                { answerText: 'Pablo Picasso', isCorrect: false },
             ],
         },
         {
-            questionText: 'How many Harry Potter books are there?',
+            questionText: "In which century was Gabriel Metsu's 'The Sick Child' painted?",
             answerOptions: [
-                { answerText: '1', isCorrect: false },
-                { answerText: '4', isCorrect: false },
-                { answerText: '6', isCorrect: false },
-                { answerText: '7', isCorrect: true },
+                { answerText: '18th Century', isCorrect: false },
+                { answerText: '16th Century', isCorrect: false },
+                { answerText: '15th Century', isCorrect: false },
+                { answerText: '17th Century', isCorrect: true },
             ],
         },
         {
-            questionText: 'Who dah man?',
+            questionText: 'Adriaen Thomasz painted a portrait of this man in 1579. He emerged as the leader of the inurrection against Spain. Who was this man?',
             answerOptions: [
-                { answerText: 'You dah man', isCorrect: false },
-                { answerText: 'I dah man', isCorrect: false },
-                { answerText: 'Bob', isCorrect: false },
-                { answerText: 'What man?', isCorrect: true },
+                { answerText: 'Miguel de Cervantes', isCorrect: false },
+                { answerText: 'Gustavus Adolphus', isCorrect: false },
+                { answerText: 'Bob Spatchula', isCorrect: false },
+                { answerText: 'William of Orange', isCorrect: true },
             ],
         },
         {
-            questionText: 'Love is in the (what)',
+            questionText: 'Jozef Israels painted "Children of the Sea" in which decade of the 1800s?',
             answerOptions: [
-                { answerText: 'Breakfast', isCorrect: false },
-                { answerText: 'word "clove"', isCorrect: false },
-                { answerText: 'Imagination', isCorrect: false },
-                { answerText: 'Air', isCorrect: true },
+                { answerText: '1850s', isCorrect: false },
+                { answerText: '1890s', isCorrect: false },
+                { answerText: '1840s', isCorrect: false },
+                { answerText: '1870s', isCorrect: true },
+            ],
+        },
+        {
+            questionText: "Johannes Vermeer painted a women in the morning, having a quiet moment reading something. What is she reading?",
+            answerOptions: [
+                { answerText: 'A book', isCorrect: false },
+                { answerText: 'Holy Scripture', isCorrect: false },
+                { answerText: 'A Letter', isCorrect: true },
+                { answerText: 'A recipe', isCorrect: false },
             ],
         },
     ];
