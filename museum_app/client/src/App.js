@@ -13,6 +13,7 @@ function App() {
       <Route exact path ="/" component={GalleryContainer} />
       <Route exact path ="/favourites" component={FavouriteContainer} />
       <Route exact path ="/quiz" component={QuizContainer} />
+      <footer className="footer"><i>Images and associated content sourced using the API of the Rijksmuseum, Amsterdam.</i></footer>
     </Router>
 
   )
