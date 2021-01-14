@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import '../css/style.css';
 
 const QuizCollection = () => {
 
@@ -83,11 +84,11 @@ const QuizCollection = () => {
     
 
     return (
-        <div className='app'>
+        <div className='galleryDescription'>
             {showScore ? (
                 <div className='score-section'>
-                    <p>You scored {score} out of {questions.length}.</p>
-                <ul>{showCorrectAnswers.map(answer => <li>{answer} ✅</li>)}</ul>
+                    <p className='quiz-text'>You scored {score} out of {questions.length}.</p>
+                <ul className='quiz-text'>{showCorrectAnswers.map(answer => <li>{answer} ✅</li>)}</ul>
                     <p>Click on 'Gallery' to return to home page.</p>
                 </div>
             ) : (
@@ -98,7 +99,7 @@ const QuizCollection = () => {
                         </div>
                         <div className='question-text'>{questions[currentQuestion].questionText}</div>
                     </div>
-                    <div className='answer-section'>
+                    <div className='quiz-answer-section'>
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
                             <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}>{answerOption.answerText}</button>
                         ))}
