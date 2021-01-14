@@ -16,14 +16,25 @@
   transition: opacity 150ms ease, border 300ms ease-in-out;
   transform: translateY(-50%);
   line-height: 1; }
+
   .glide__arrow:focus {
     outline: none; }
+
   .glide__arrow:hover {
     border-color: white; }
+
   .glide__arrow--left {
-    left: 2em; }
+    left: 5.25em; }
+
   .glide__arrow--right {
-    right: 2em; }
+    right: 4.15em; }
+
+  .glide__arrow--start {
+    left: 0em; }
+
+  .glide__arrow--end {
+      right: 0em; }
+
   .glide__arrow--disabled {
     opacity: 0.33; }
 

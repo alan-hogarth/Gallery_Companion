@@ -6,7 +6,7 @@ const SearchForm = (({onUserInput}) => {
     }
 
     return (
-       <div class="searchForm">
+       <div className="searchForm">
             <span>Search Artist/Title/Date: </span>
             <input type="text" placeholder="search..." onChange={handleFilterInput}/>
         </div>

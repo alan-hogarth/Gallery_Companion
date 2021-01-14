@@ -10,37 +10,31 @@ const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
     let sliderConfig = {
         perView: 3,
         startAt: 0,
+        focusAt: 1,
         rewind: false,
         breakpoints: {
+            1600: {
+                perView:3
+            },
             800: {
                 perView: 2
             },
-            400: {
+            500: {
                 perView: 1
             }
         }
     };
 
     let slider =  new Glide('.glide', sliderConfig);
-
-    if (itemDetails) {
-        sliderConfig["startAt"] = collection.findIndex(item => itemDetails.artObject.objectNumber === item.objectNumber )
-        //slider.mount();
-
-        console.log("itemDetails.artObject.objectNumber = ", itemDetails.artObject.objectNumber)
-
-        console.log(sliderConfig["startAt"])
-        console.log(slider.focusAt)
-
-    }
     
     useEffect(() => {
         if (itemDetails) {
             const startIndex =  collection.findIndex(item => itemDetails.artObject.objectNumber === item.objectNumber );
-            slider.update({ startAt: startIndex});
+            slider.update({focusAt: 1, startAt: startIndex+1});
         }
+
         slider.mount()
-        //return () => slider.mount()
+        return () => slider.mount()
     }, [slider, itemDetails, collection]);
 
     const objectNodes = collection.map((object, index) =>{
@@ -64,12 +58,28 @@ const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
             <div className="glide">
                 <div className="glide__track" data-glide-el="track">
                     <ul className="glide__slides">
+
+                        <li className="glide__slide"gon> 
+                            <p>Welcome to Art Companion and today's gallery.</p>
+                            <p>Please use the "Next" button to begin your gallery journey.</p>
+                            <p>You can use the search bar to browse the gallery for specific pieces, artists, period or year.</p>
+                            <p>You can access addtional information about any given piece by clicking "more..."</p>
+                            <p>In addition, you may like to save certain pieces and create your own gallery of favourites. To do this, simply click the "Favourtite" button under any art piece.</p>
+                            <p>We hope you enjoy your journey.</p>
+                        </li>
                         {objectNodes}
+                        <li className="glide__slide">
+                            <p>You have reached the end of today's gallery.</p>
+                            <p>We hope you enjoyed the journy.</p>
+                            <p>Please click either the "Start" button, which will return you to the start, or the "Prev" button to revisit your journey through the gallery.</p>
+                        </li>
                     </ul>
                 </div>
                 <div className="glide__arrows" data-glide-el="controls">
+                    <button className="glide__arrow glide__arrow--start" data-glide-dir="<<">Start</button>
                     <button className="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
                     <button className="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                   <button className="glide__arrow glide__arrow--end" data-glide-dir=">>">End</button>
                 </div>
             </div>
         </div>

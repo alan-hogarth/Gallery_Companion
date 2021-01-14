@@ -2,7 +2,7 @@ import api_key from "../api_key";
 
 const userKey = api_key()
 
-const collectionURL = `https://www.rijksmuseum.nl/api/en/collection/?key=${userKey}&ps=10&toppieces=true&hasImage=true`;
+const collectionURL = `https://www.rijksmuseum.nl/api/en/collection/?key=${userKey}&ps=100&toppieces=true&hasImage=true`;
 
 const localURL = 'http://localhost:3000/api/objects/'
 
@@ -23,7 +23,6 @@ export const getAllFavourites = ()=>{
     .then(res => res.json())
 };
 
-
 export const addToFavourites = (data)=>{ 
     return fetch(localURL, {
         method: 'POST',
@@ -34,8 +33,6 @@ export const addToFavourites = (data)=>{
     })
     .then(res => res.json())
 };
-
-
 
 export const deleteFavourite = (id) => {
     return fetch(localURL + id, {
