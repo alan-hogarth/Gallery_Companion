@@ -62,7 +62,7 @@ const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
                         <li className="glide__slide"> 
                             <p>Welcome to Art Companion and today's gallery.</p>
                             <p>Please use the "Next" button to begin your gallery journey.</p>
-                            <p>You can use the search bar to browse the gallery for specific pieces, artists, period or year.</p>
+                            <p>You can use the search bar to browse the gallery for specific pieces, artists, period or year... Click "Next" to view your filtered Gallery.</p>
                             <p>You can access addtional information about any given piece by clicking "more..."</p>
                             <p>In addition, you may like to save certain pieces and create your own gallery of favourites. To do this, simply click the "Favourtite" button under any art piece.</p>
                             <p>We hope you enjoy your journey.</p>
