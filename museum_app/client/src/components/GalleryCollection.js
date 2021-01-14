@@ -59,7 +59,7 @@ const GalleryCollection = ({collection, viewItemDetails, itemDetails}) => {
                 <div className="glide__track" data-glide-el="track">
                     <ul className="glide__slides">
 
-                        <li className="glide__slide"gon> 
+                        <li className="glide__slide"> 
                             <p>Welcome to Art Companion and today's gallery.</p>
                             <p>Please use the "Next" button to begin your gallery journey.</p>
                             <p>You can use the search bar to browse the gallery for specific pieces, artists, period or year.</p>

@@ -56,17 +56,14 @@ const QuizCollection = () => {
         },
     ];
 
-
     const handleAnswerButtonClick = (isCorrect, answerText) => {
          
-        
         if (isCorrect) {
             setScore(score + 1);
             const updatedArray = [...showCorrectAnswers, answerText];
             setShowCorrectAnswers(updatedArray);
         } 
         
-
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
@@ -74,14 +71,6 @@ const QuizCollection = () => {
             setShowScore(true);
         } 
     }
-        
-
-
-
-    
-    
-    
-    
 
     return (
         <div className='galleryDescription'>

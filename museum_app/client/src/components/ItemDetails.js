@@ -1,6 +1,4 @@
 import { useSpeechSynthesis } from 'react-speech-kit';
-//import React, { useState } from 'react';
-//import Speech from 'react-speech';
 
 const ItemDetails = ({itemDetails}) => {
     
