@@ -7,7 +7,10 @@ import { useEffect } from "react";
 const FavouriteCollection = ({artwork, removeFavourite}) => {
 
     const sliderConfig = {
-        perView: 3
+            perView: 3,
+            startAt: 0,
+            focusAt: 1,
+            rewind: false
     };
 
     const slider = new Glide('.glide', sliderConfig);
@@ -33,8 +36,10 @@ const FavouriteCollection = ({artwork, removeFavourite}) => {
                     </ul>
                 </div>
                 <div className="glide__arrows" data-glide-el="controls">
+                    <button className="glide__arrow glide__arrow--start" data-glide-dir="<<">Start</button>
                     <button className="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
                     <button className="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                    <button className="glide__arrow glide__arrow--end" data-glide-dir=">>">End</button>
                 </div>
             </div>
         </div>
